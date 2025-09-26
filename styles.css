@@ -200,7 +200,6 @@ footer {
   color: #fff;
   text-align: center;
   padding: 15px;
-  /* margin-top: 20px; */
 }
 
 /* Search and Filter Section Styling */
@@ -418,21 +417,21 @@ footer {
   gap: 30px;
   max-width: 1200px;
   margin: auto;
-  text-align: left; /* ✅ căn toàn bộ về trái */
+  text-align: left; 
 }
 
 .footer-section h4 {
   font-size: 16px;
   margin-bottom: 15px;
   font-weight: bold;
-  text-align: left; /* ✅ căn trái */
+  text-align: left; 
 }
 
 .footer-section ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  text-align: left; /* ✅ căn trái */
+  text-align: left; 
 }
 
 .footer-section ul li {
@@ -452,7 +451,7 @@ footer {
 .company-info p {
   margin: 8px 0;
   color: #ccc;
-  text-align: left; /* ✅ căn trái */
+  text-align: left; 
 }
 
 .logo {
@@ -468,7 +467,7 @@ footer {
 }
 
 .social-icons {
-  text-align: left; /* ✅ căn trái */
+  text-align: left; \
 }
 
 .social-icons a {
@@ -1120,4 +1119,4 @@ footer {
   }
 }
 
-/* ...existing code... */
+
