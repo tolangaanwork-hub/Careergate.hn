@@ -405,7 +405,87 @@ const blogPosts = [
     views: 890,
     likes: 134,
     isFeatured: false
-  }
+  },
+  {
+  id: 6,
+  title: "Top 10 mẹo tối ưu hiệu suất ReactJS cho dự án lớn",
+  excerpt: "ReactJS là thư viện phổ biến để xây dựng giao diện người dùng. Tuy nhiên, khi dự án ngày càng lớn, hiệu suất có thể bị ảnh hưởng nếu không được tối ưu...",
+  content: "1. Sử dụng React.memo\n\nBọc các component bằng React.memo để tránh render không cần thiết.\n\n2. Tối ưu danh sách với key\n\nLuôn đặt key duy nhất khi render list để React có thể quản lý tốt hơn.\n\n3. Lazy loading\n\nChỉ tải component khi cần bằng React.lazy và Suspense.\n\n4. Code splitting\n\nTách code thành nhiều bundle nhỏ để tải nhanh hơn.\n\n5. Tránh inline function trong JSX\n\nKhai báo hàm ngoài render để tránh tạo mới liên tục.\n\n6. Dùng virtualization cho list lớn\n\nThư viện như react-window, react-virtualized giúp hiển thị danh sách lớn mượt hơn.\n\n7. Tránh prop drilling\n\nSử dụng Context API hoặc Redux để quản lý state.\n\n8. Batch update\n\nReact 18 hỗ trợ batching nhiều state update, giúp giảm render.\n\n9. Dùng useCallback và useMemo hợp lý\n\nChỉ dùng khi thật sự cần để giảm tính toán dư thừa.\n\n10. Kiểm tra performance bằng React DevTools\n\nLuôn kiểm tra để tìm ra bottleneck.",
+  author: "Minh Trí",
+  authorBio: "Frontend Developer, chuyên ReactJS và TypeScript",
+  date: "20/01/2024",
+  readTime: "7 phút đọc",
+  category: "ReactJS",
+  tags: ["ReactJS", "Frontend", "Performance", "Web Development"],
+  image: "react.png",
+  views: 980,
+  likes: 72,
+  isFeatured: false
+},
+{
+  id: 7,
+  title: "5 xu hướng trí tuệ nhân tạo (AI) nổi bật năm 2024",
+  excerpt: "AI tiếp tục phát triển mạnh mẽ và ảnh hưởng đến nhiều lĩnh vực trong năm 2024. Dưới đây là 5 xu hướng đáng chú ý bạn không nên bỏ lỡ...",
+  content: "1. Generative AI\n\nAI tạo nội dung văn bản, hình ảnh, âm nhạc ngày càng phổ biến.\n\n2. AI trong y tế\n\nỨng dụng AI để chẩn đoán, dự đoán bệnh sớm và hỗ trợ điều trị.\n\n3. AI trong giáo dục\n\nTạo trải nghiệm học tập cá nhân hóa, hỗ trợ giảng dạy.\n\n4. AI kết hợp IoT\n\nThiết bị IoT tích hợp AI giúp tự động hóa thông minh hơn.\n\n5. Đạo đức và quy định về AI\n\nNhiều quốc gia bắt đầu đưa ra khung pháp lý quản lý AI.",
+  author: "Lan Anh",
+  authorBio: "Data Scientist với 5 năm kinh nghiệm về AI và Machine Learning",
+  date: "25/01/2024",
+  readTime: "6 phút đọc",
+  category: "AI",
+  tags: ["AI", "Machine Learning", "Technology", "Trends"],
+  image: "ai.png",
+  views: 2150,
+  likes: 134,
+  isFeatured: true
+},
+{
+  id: 8,
+  title: "Docker cơ bản: Hướng dẫn cho lập trình viên mới bắt đầu",
+  excerpt: "Docker giúp đơn giản hóa việc triển khai và chạy ứng dụng. Nếu bạn là người mới, bài viết này sẽ hướng dẫn những kiến thức cơ bản...",
+  content: "1. Docker là gì?\n\nDocker là nền tảng container hóa giúp chạy ứng dụng độc lập môi trường.\n\n2. Image và Container\n\nImage là mẫu đóng gói, Container là thực thể đang chạy.\n\n3. Dockerfile\n\nSử dụng Dockerfile để định nghĩa cách build image.\n\n4. Docker Compose\n\nQuản lý nhiều container dễ dàng với docker-compose.yml.\n\n5. Ưu điểm của Docker\n\nTính nhất quán, dễ triển khai, tiết kiệm tài nguyên và hỗ trợ CI/CD.",
+  author: "Hữu Tài",
+  authorBio: "DevOps Engineer với hơn 6 năm kinh nghiệm triển khai hệ thống",
+  date: "28/01/2024",
+  readTime: "5 phút đọc",
+  category: "DevOps",
+  tags: ["Docker", "DevOps", "Deployment", "Container"],
+  image: "docker.png",
+  views: 1670,
+  likes: 96,
+  isFeatured: false
+},
+{
+  id: 9,
+  title: "Kubernetes: 7 khái niệm cốt lõi bạn cần biết",
+  excerpt: "Kubernetes là công cụ mạnh mẽ để quản lý container. Tuy nhiên, trước khi đi sâu, bạn cần nắm rõ 7 khái niệm cơ bản sau...",
+  content: "1. Pod\n\nĐơn vị nhỏ nhất chứa container.\n\n2. Node\n\nMáy chủ vật lý hoặc ảo chạy Pod.\n\n3. Cluster\n\nTập hợp nhiều Node do Kubernetes quản lý.\n\n4. Deployment\n\nĐịnh nghĩa cách triển khai Pod và quản lý số lượng.\n\n5. Service\n\nCho phép các Pod giao tiếp với nhau và với bên ngoài.\n\n6. Namespace\n\nGiúp tổ chức và phân tách tài nguyên.\n\n7. ConfigMap & Secret\n\nQuản lý cấu hình và dữ liệu nhạy cảm.",
+  author: "Ngọc Hà",
+  authorBio: "Cloud Engineer chuyên về Kubernetes và Microservices",
+  date: "01/02/2024",
+  readTime: "8 phút đọc",
+  category: "Kubernetes",
+  tags: ["Kubernetes", "DevOps", "Cloud", "Container"],
+  image: "kubernetes.png",
+  views: 1890,
+  likes: 112,
+  isFeatured: true
+},
+{
+  id: 10,
+  title: "Clean Code: 6 nguyên tắc viết mã sạch dễ bảo trì",
+  excerpt: "Clean Code giúp code dễ đọc, dễ bảo trì và giảm bug. Dưới đây là 6 nguyên tắc cơ bản mà lập trình viên nào cũng nên áp dụng...",
+  content: "1. Đặt tên rõ ràng\n\nTên biến, hàm, class phải thể hiện đúng mục đích.\n\n2. Hàm ngắn gọn\n\nMỗi hàm chỉ nên làm một việc duy nhất.\n\n3. Tránh lặp code\n\nLuôn refactor để tái sử dụng code.\n\n4. Comment hợp lý\n\nComment để giải thích lý do, không lặp lại code.\n\n5. Format code thống nhất\n\nSử dụng linter và formatter để đồng bộ style.\n\n6. Viết test\n\nUnit test và integration test giúp đảm bảo code an toàn khi thay đổi.",
+  author: "Quốc Bảo",
+  authorBio: "Backend Developer, tác giả nhiều bài viết về Clean Code",
+  date: "05/02/2024",
+  readTime: "6 phút đọc",
+  category: "Best Practices",
+  tags: ["Clean Code", "Best Practices", "Software Engineering"],
+  image: "clean-code.png",
+  views: 1420,
+  likes: 87,
+  isFeatured: false
+}
 ];
 
 // Helper function để format content thành HTML
@@ -530,7 +610,6 @@ function renderBlogDetail() {
   }
 }
 
-// Expanded Blog data array with complete information
 
 
 // Slideshow
