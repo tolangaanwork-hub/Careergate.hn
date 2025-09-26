@@ -277,7 +277,7 @@ function renderJobDetail() {
     function renderList(text) {
       if (text && text.includes("-")) {
         return (
-          "<ul class='des'>" +
+          "<ul>" +
           text
             .split("\n")
             .map(line => line.trim())
@@ -299,28 +299,140 @@ function renderJobDetail() {
     const locationHTML = renderList(job.location);
     const timeHTML = renderList(job.time);
 
+    // Get company logo if available
+    const companyLogo = job.src ? `<img src="${job.src}" alt="${job.company} Logo">` : '<div class="company-initial">' + job.company.charAt(0) + '</div>';
+
     container.innerHTML = `
-      <h1>${job.title}</h1>
-      <h2>Công ty:${job.company}</h2>
+      <div class="breadcrumb">
+        <a href="index.html">Trang chủ</a>
+        <span>></span>
+        <a href="jobs.html">Việc làm</a>
+        <span>></span>
+        <span>Chi tiết việc làm</span>
+      </div>
 
-      <h2>Mô tả:</h2>
-      ${descriptionHTML}
+      <div class="job-detail-header">
+        <div class="job-detail-header-content">
+          <div class="job-company-logo">
+            ${companyLogo}
+          </div>
+          <div class="job-title-section">
+            <h1>${job.title}</h1>
+            <p class="job-company-name">${job.company}</p>
+            <div class="job-meta-info">
+              <div class="job-meta-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>${job.location ? job.location.split('\n')[0].trim() : 'Chưa cập nhật'}</span>
+              </div>
+              <div class="job-meta-item">
+                <i class="fas fa-clock"></i>
+                <span>${job.time ? job.time.split('\n')[0].trim() : 'Chưa cập nhật'}</span>
+              </div>
+              <div class="job-meta-item">
+                <i class="fas fa-envelope"></i>
+                <span>${job.contact}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <h2>Yêu cầu:</h2>
-      ${requirementsHTML}
+      <div class="job-detail-content">
+        <div class="job-main-content">
+          <div class="job-section">
+            <h2>📋 Mô tả công việc</h2>
+            ${descriptionHTML}
+          </div>
 
-      <h2>Quyền lợi:</h2>
-      ${benefitsHTML}
+          <div class="job-section">
+            <h2>🎯 Yêu cầu ứng viên</h2>
+            ${requirementsHTML}
+          </div>
 
-      <h2>Thời gian:</h2>
-      ${timeHTML}
+          <div class="job-section">
+            <h2>🎁 Quyền lợi</h2>
+            ${benefitsHTML}
+          </div>
+        </div>
 
-      <h2>Địa điểm:</h2>
-      ${locationHTML}
-      
-      <h2>Liên hệ:</h2>
-      <p>${job.contact}</p>
+        <div class="job-sidebar">
+          <div class="job-actions-card">
+            <h3>🚀 Ứng tuyển ngay</h3>
+            <button class="btn-apply" onclick="applyForJob(${job.id})">
+              <i class="fas fa-paper-plane"></i> Ứng tuyển ngay
+            </button>
+            <button class="btn-secondary" onclick="saveJob(${job.id})">
+              <i class="fas fa-bookmark"></i> Lưu việc làm
+            </button>
+            <button class="btn-secondary" onclick="shareJob(${job.id})">
+              <i class="fas fa-share-alt"></i> Chia sẻ
+            </button>
+          </div>
+
+          <div class="job-info-card">
+            <h3><i class="fas fa-info-circle"></i> Thông tin việc làm</h3>
+            <div class="job-info-item">
+              <i class="fas fa-building"></i>
+              <span><strong>Công ty:</strong> ${job.company}</span>
+            </div>
+            <div class="job-info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span><strong>Địa điểm:</strong> ${job.location ? job.location.split('\n')[0].trim() : 'Chưa cập nhật'}</span>
+            </div>
+            <div class="job-info-item">
+              <i class="fas fa-clock"></i>
+              <span><strong>Thời gian:</strong> ${job.time ? job.time.split('\n')[0].trim() : 'Chưa cập nhật'}</span>
+            </div>
+            <div class="job-info-item">
+              <i class="fas fa-envelope"></i>
+              <span><strong>Liên hệ:</strong> ${job.contact}</span>
+            </div>
+          </div>
+        </div>
+      </div>
     `;
+  } else {
+    container.innerHTML = `
+      <div class="job-not-found">
+        <h2>Không tìm thấy việc làm</h2>
+        <p>Việc làm bạn tìm kiếm không tồn tại hoặc đã bị xóa.</p>
+        <a href="jobs.html" class="btn-back">← Quay lại danh sách việc làm</a>
+      </div>
+    `;
+  }
+}
+
+// Job action functions
+function applyForJob(jobId) {
+  const job = jobs.find(j => j.id === jobId);
+  if (job) {
+    alert(`Bạn đã ứng tuyển thành công cho vị trí "${job.title}" tại ${job.company}!\n\nChúng tôi sẽ liên hệ với bạn qua email: ${job.contact}`);
+  }
+}
+
+function saveJob(jobId) {
+  const job = jobs.find(j => j.id === jobId);
+  if (job) {
+    alert(`Đã lưu việc làm "${job.title}" vào danh sách yêu thích!`);
+  }
+}
+
+function shareJob(jobId) {
+  const job = jobs.find(j => j.id === jobId);
+  if (job) {
+    const shareUrl = window.location.href;
+    if (navigator.share) {
+      navigator.share({
+        title: job.title,
+        text: `Việc làm ${job.title} tại ${job.company}`,
+        url: shareUrl
+      });
+    } else {
+      // Fallback for browsers that don't support Web Share API
+      navigator.clipboard.writeText(shareUrl).then(() => {
+        alert('Đã sao chép link chia sẻ vào clipboard!');
+      });
+    }
   }
 }
 
