@@ -356,7 +356,7 @@ const blogPosts = [
     image: "py.jpg",
     views: 980,
     likes: 156,
-    isFeatured: false
+    isFeatured: true
   },
   {
     id: 3,
@@ -488,6 +488,77 @@ const blogPosts = [
 }
 ];
 
+// Render blog list page
+function renderBlogList() {
+  const container = document.getElementById("blogGrid");
+  if (!container) return;
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryFilter = urlParams.get("category");
+  
+  let filteredPosts = blogPosts;
+  if (categoryFilter) {
+    filteredPosts = blogPosts.filter(post => post.category === categoryFilter);
+  }
+
+  container.innerHTML = filteredPosts.map(post => `
+    <div class="blog-grid-item">
+      <img src="${post.image}" alt="${post.title}">
+      <div class="blog-grid-content">
+        <div class="blog-grid-meta">
+          <span>📅 ${post.date}</span>
+          <span>👤 ${post.author}</span>
+          <span>⏱️ ${post.readTime}</span>
+        </div>
+        <span class="blog-category-tag">${post.category}</span>
+        <h3><a href="blog-detail.html?id=${post.id}">${post.title}</a></h3>
+        <p>${post.excerpt}</p>
+        <div class="blog-grid-stats">
+          <span>👀 ${post.views} lượt xem</span>
+          <span>❤️ ${post.likes} lượt thích</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// Filter blogs by category
+function filterBlogsByCategory() {
+  const categoryFilter = document.getElementById('categoryFilter');
+  if (!categoryFilter) return;
+
+  categoryFilter.addEventListener('change', (e) => {
+    const selectedCategory = e.target.value;
+    const container = document.getElementById("blogGrid");
+    if (!container) return;
+
+    let filteredPosts = blogPosts;
+    if (selectedCategory) {
+      filteredPosts = blogPosts.filter(post => post.category === selectedCategory);
+    }
+
+    container.innerHTML = filteredPosts.map(post => `
+      <div class="blog-grid-item">
+        <img src="${post.image}" alt="${post.title}">
+        <div class="blog-grid-content">
+          <div class="blog-grid-meta">
+            <span>📅 ${post.date}</span>
+            <span>👤 ${post.author}</span>
+            <span>⏱️ ${post.readTime}</span>
+          </div>
+          <span class="blog-category-tag">${post.category}</span>
+          <h3><a href="blog-detail.html?id=${post.id}">${post.title}</a></h3>
+          <p>${post.excerpt}</p>
+          <div class="blog-grid-stats">
+            <span>👀 ${post.views} lượt xem</span>
+            <span>❤️ ${post.likes} lượt thích</span>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  });
+}
+
 // Helper function để format content thành HTML
 function formatBlogContent(content) {
   return content
@@ -612,6 +683,8 @@ function renderBlogDetail() {
 
 
 
+
+
 // Slideshow
 let slideIndex = 0;
 function showSlides() {
@@ -642,7 +715,8 @@ document.addEventListener("DOMContentLoaded", () => {
   renderJobDetail();
   renderBlogContent();
   renderBlogDetail();
-
+  renderBlogList();
+  filterBlogsByCategory();
   const prevBtn = document.querySelector(".prev");
   const nextBtn = document.querySelector(".next");
   if (prevBtn && nextBtn) {

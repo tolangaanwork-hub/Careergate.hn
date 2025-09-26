@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog IT - CareerGate</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <img src="CareerGate.png" alt="CareerGat" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Thiết kế CV</a></li>
+        <li><a href="jobs.html">Việc làm hot nhất</a></li>
+        <li class="dropdown">
+          <a href="#">Ngành nghề ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="jobs.html?category=it">Công nghệ</a></li>
+            <li><a href="jobs.html?category=finance">Tài chính</a></li>
+            <li><a href="jobs.html?category=marketing">Marketing</a></li>
+            <li><a href="jobs.html?category=design">Thiết kế</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="blog-list-page">
+    <div class="blog-header">
+      <h1>Blog IT</h1>
+      <p>Khám phá kiến thức công nghệ và phát triển kỹ năng lập trình</p>
+    </div>
+    
+    <div class="blog-filter">
+      <select id="categoryFilter">
+        <option value="">Tất cả danh mục</option>
+        <option value="Git">Git</option>
+        <option value="Python">Python</option>
+        <option value="React">React</option>
+        <option value="DevOps">DevOps</option>
+        <option value="AI">AI</option>
+        <option value="Kubernetes">Kubernetes</option>
+        <option value="Best Practices">Best Practices</option>
+        <option value="Lifestyle">Lifestyle</option>
+      </select>
+    </div>
+    
+    <div class="blog-grid" id="blogGrid"></div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section company-info">
+        <img src="CareerGate.png" alt="CareerGat" class="logo">
+        <p>Nền tảng tìm việc đón đầu kỷ nguyên nghề nghiệp số.</p>
+        <p><i class="fa fa-phone"></i> 0888899988</p>
+        <p><i class="fa fa-envelope"></i> contact@careergate.vn</p>
+      </div>
+
+      <div class="footer-section">
+        <h4>Popular Searches</h4>
+        <ul>
+          <li><a href="#">Về chúng tôi</a></li>
+          <li><a href="#">Liên hệ</a></li>
+          <li><a href="#">Thiết kế CV</a></li>
+          <li><a href="#">Việc làm hot nhất</a></li>
+          <li><a href="#">Việc làm các ngành nghề</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
