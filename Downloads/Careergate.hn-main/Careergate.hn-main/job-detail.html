@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerGate - Đón đầu kỷ nguyên nghề nghiệp số</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <img src="CareerGate.png" alt="CareerGat" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Thiết kế CV</a></li>
+        <li><a href="jobs.html">Việc làm hot nhất</a></li>
+        <li class="dropdown">
+          <a href="#">Ngành nghề ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="jobs.html?category=it">Công nghệ</a></li>
+            <li><a href="jobs.html?category=finance">Tài chính</a></li>
+            <li><a href="jobs.html?category=marketing">Marketing</a></li>
+            <li><a href="jobs.html?category=design">Thiết kế</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="slideshow">
+      <div class="slide active"> <img src="1.png" class="banner"></div>
+      <div class="slide"><img src="3.png" class="banner"></div>
+    </div>
+    <button class="prev">❮</button>
+    <button class="next">❯</button>
+  </section>
+
+
+
+  <section class="job-detail" id="jobDetail"></section>
+
+ <section class="featured-recruiters">
+    <h2>Nhà Tuyển Dụng Nổi Bật</h2>
+    <div class="recruiters-carousel">
+      <div class="recruiters-container">
+        <div class="recruiter-slide active">
+          <div class="recruiter-logos">
+            <img src="ai_solutio.png" alt="AI Solutions">
+            <img src="apple.png" alt="Apple">
+            <img src="careergate.png" alt="CareerGate">
+            <img src="eko.png" alt="EKO Tech">
+            <img src="fis.png" alt="FIS">
+          </div>
+        </div>
+        <div class="recruiter-slide">
+          <div class="recruiter-logos">
+            <img src="fpt.png" alt="FPT">
+            <img src="fss.png" alt="FSS">
+            <img src="mb.png" alt="MB Bank">
+            <img src="vitettel.png" alt="Viettel">
+            <img src="ai_solutio.png" alt="AI Solutions">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="blog-it" id="blog">
+    <div class="blog-header">
+      <h2>Blog IT</h2>
+      <a href="#" class="view-all">Xem tất cả</a>
+    </div>
+    <div class="blog-content">
+ 
+    </div>
+  </section>
+
+  <div class="chat-widget" aria-live="polite">
+    <button class="chat-toggle" aria-expanded="false" aria-controls="chatWindow" title="Hỗ trợ">
+      <i class="fa-solid fa-comment-dots"></i>
+    </button>
+    <div class="chat-window" id="chatWindow" hidden>
+      <div class="chat-header">
+        <span>Hỗ trợ trực tuyến</span>
+        <button class="chat-close" aria-label="Đóng">&times;</button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="msg bot">Xin chào! Tôi có thể giúp gì cho bạn?</div>
+      </div>
+      <form class="chat-input" id="chatForm">
+        <input type="text" id="chatText" placeholder="Nhập tin nhắn..." autocomplete="off" />
+        <button type="submit" class="btn-send">Gửi</button>
+      </form>
+    </div>
+  </div>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section company-info">
+      <img src="CareerGate.png" alt="CareerGat" class="logo">
+      <p>Nền tảng tìm việc đón đầu kỷ nguyên nghề nghiệp số.</p>
+      <p><i class="fa fa-phone"></i> 0888899988</p>
+      <p><i class="fa fa-envelope"></i> contact@careergate.vn</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Popular Searches</h4>
+      <ul>
+        <li><a href="#">Về chúng tôi</a></li>
+        <li><a href="#">Liên hệ</a></li>
+        <li><a href="#">Thiết kế CV</a></li>
+        <li><a href="#">Việc làm hot nhất</a></li>
+        <li><a href="#">Việc làm các ngành nghề</a></li>
+      </ul>
+    </div>
+</footer>
+
+</body>
+</html>
