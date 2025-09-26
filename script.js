@@ -545,7 +545,7 @@ const blogPosts = [
   readTime: "6 phút đọc",
   category: "AI",
   tags: ["AI", "Machine Learning", "Technology", "Trends"],
-  image: "ai.png",
+  image: "ai.jpg",
   views: 2150,
   likes: 134,
   isFeatured: true
@@ -577,7 +577,7 @@ const blogPosts = [
   readTime: "8 phút đọc",
   category: "Kubernetes",
   tags: ["Kubernetes", "DevOps", "Cloud", "Container"],
-  image: "kubernetes.png",
+  image: "kub.png",
   views: 1890,
   likes: 112,
   isFeatured: true
@@ -593,7 +593,7 @@ const blogPosts = [
   readTime: "6 phút đọc",
   category: "Best Practices",
   tags: ["Clean Code", "Best Practices", "Software Engineering"],
-  image: "clean-code.png",
+  image: "clean.jpg",
   views: 1420,
   likes: 87,
   isFeatured: false
